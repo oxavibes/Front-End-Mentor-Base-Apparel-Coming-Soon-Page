@@ -1,0 +1,178 @@
+:root {
+    --desaturated-red--color: hsl(0, 36%, 70%);
+    --soft-red--color: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+
+    --first-gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --second-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    --font-family: 'Josefin Sans';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid orange; */
+}
+
+*::after,
+*::before,
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+}
+
+body {
+    padding: 4rem;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    margin: 0 auto;
+    max-width: 120rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero {
+    display: flex;
+    margin: 0 4rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    background: var(--first-gradient);
+}
+
+.hero__description {
+    flex: 0 0 55%;
+    padding: 5rem 9.5rem 10rem 9.5rem;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+}
+
+.logo-box {}
+
+.hero__logo {
+    margin-bottom: 10rem;
+}
+
+.hero__picture--small {
+    height: 30rem;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 6rem;
+    background-image: url(../images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
+
+.hero__heading {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    color: var(--dark-grayish-red);
+}
+
+
+.hero__heading span {
+    color: var(--desaturated-red--color);
+    font-weight: 300;
+}
+
+.hero__text {
+    color: var(--desaturated-red--color);
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.form {
+    display: flex;
+}
+
+.form__group {
+    position: relative;
+    flex: 0 1 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 1.5rem 3rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    display: inline-block;
+    border: 1px solid var(--desaturated-red--color);
+    color: var(--dark-grayish-red);
+    font-weight: 600;
+    transition: all .5s;
+}
+
+.form__input::placeholder {
+    color: var(--desaturated-red--color);
+}
+
+.form__input:valid {
+    border: 1px solid var(--desaturated-red--color);
+}
+
+.form__icon-error {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    visibility: hidden;
+    transition: all .2s;
+}
+
+.form__error {
+    margin-left: 3rem;
+    color: red;
+    transition: all .3s;
+}
+
+.form__input:placeholder-shown+.form__error,
+.form__input:valid+.form__error {
+    outline: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8rem);
+}
+
+.form__input:invalid+.form__error,
+.form__input:invalid .form__icon-error {
+    visibility: visible;
+}
+
+.form__button {
+    flex: 0 1 20%;
+    margin-right: -1px;
+    height: 5rem;
+    outline: none;
+    padding: 0rem 3.5rem;
+    border-radius: 100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    cursor: pointer;
+    border: 1px solid var(--desaturated-red--color);
+    background: var(--second-gradient);
+}
+
+
+.hero__picture {
+    flex: 0 0 45%;
+    background-image: url(../images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
